@@ -7,7 +7,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("TRANSMITTING...");
-    // Simulate a delay for the "sending" effect
     setTimeout(() => {
       setStatus("SIGNAL_SENT_SUCCESSFULLY");
       alert("Transmission Received, Emmanne will get back to you soon.");
@@ -16,9 +15,17 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-      <h2 className="contact-header">ESTABLISH_CONNECTION</h2>
-      
       <div className="form-wrapper">
+        
+        {/* REFINED SMALLER HEADER - Matches Profile Card */}
+        <div className="card-header">
+          <div className="header-content">
+            <h2 className="identity-title">ESTABLISH_CONNECTION</h2>
+            <div className="id-serial">FREQ-2.4GHZ-STABLE</div>
+          </div>
+          <div className="header-decorator"></div>
+        </div>
+        
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="input-group">
             <label className="label-text">Identifier (Name)</label>
@@ -53,12 +60,12 @@ const Contact = () => {
             Send Signal
           </button>
         </form>
-      </div>
 
-      {/* Mobile Status Bar */}
-      <div className="terminal-footer">
-        <span className="blink-dot"></span>
-        <span className="status-text">STATUS: {status}</span>
+        {/* Status Bar inside the wrapper for better alignment */}
+        <div className="terminal-footer">
+          <span className="blink-dot"></span>
+          <span className="status-text">STATUS: {status}</span>
+        </div>
       </div>
     </div>
   );

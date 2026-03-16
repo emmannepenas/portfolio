@@ -29,12 +29,18 @@ const Skills = () => {
 
   return (
     <div className="skills-container">
-      {/* THE MAIN CONTAINER: Keeps content centered and clear of the side nav */}
       <div className="content-scaler">
         
         {/* Core Skills Section */}
         <section className="proficiency-section">
-          <h2 className="skills-header">SYSTEM_CORE_LEVELS</h2>
+          <div className="card-header">
+            <div className="header-content">
+              <h2 className="identity-title">SYSTEM_CORE_LEVELS</h2>
+              <div className="id-serial">MOD-STABILITY: 0.98</div>
+            </div>
+            <div className="header-decorator"></div>
+          </div>
+
           <div className="bar-grid">
             {coreLanguages.map((skill, index) => (
               <div key={index} className="skill-bar-wrapper">
@@ -47,7 +53,7 @@ const Skills = () => {
                     className="bar-fill" 
                     style={{ 
                       width: skill.level, 
-                      transitionDelay: `${index * 150}ms` /* Staggered fill effect */
+                      transitionDelay: `${index * 150}ms` 
                     }}
                   ></div>
                 </div>
@@ -59,11 +65,17 @@ const Skills = () => {
 
         {/* Tools & Frameworks Section */}
         <section className="frameworks-section">
-          <h2 className="skills-header">INTEGRATIVE_TOOLS</h2>
+          <div className="card-header">
+            <div className="header-content">
+              <h2 className="identity-title">INTEGRATIVE_TOOLS</h2>
+              <div className="id-serial">REG_PATH: /usr/local/bin</div>
+            </div>
+            <div className="header-decorator"></div>
+          </div>
+
           <div className="tools-grid">
             {tools.map((tool, index) => (
               <div key={index} className="tool-tag">
-                {/* Cyberpunk decorative line */}
                 <div className="tool-glitch-line"></div>
                 <h3 className="tool-name">:: {tool.name}</h3>
                 <p className="tool-usage">{tool.use}</p>

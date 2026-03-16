@@ -23,8 +23,16 @@ const About = () => {
 
   return (
     <div className="about-container">
+      {/* INTRO SECTION */}
       <section className="intro-section">
-        <h2 className="section-title">USER_PROFILE</h2>
+        <div className="card-header">
+          <div className="header-content">
+            <h2 className="identity-title">USER_PROFILE</h2>
+            <div className="id-serial">BIO-DATA_ENCRYPTION: ENABLED</div>
+          </div>
+          <div className="header-decorator"></div>
+        </div>
+        
         <div className="bio-box">
           <p>
             Hello! I am <span className="highlight">Emmanne Angelo Peñas</span>, a Full-stack Developer and UI Architect 
@@ -32,14 +40,22 @@ const About = () => {
             aesthetic design and technical logic.
           </p>
           <p>
-            My work is driven by a passion for research methodology and "Cyber-Mainframe" aesthetics, 
+            My work is driven by a passion for research methodology and <span className="highlight">"Cyber-Mainframe" aesthetics</span>, 
             ensuring every project is not just functional, but a visual experience.
           </p>
         </div>
       </section>
 
+      {/* EXPERIENCE SECTION */}
       <section className="experience-section">
-        <h2 className="section-title">TECHNICAL_EXPERIENCE</h2>
+        <div className="card-header">
+          <div className="header-content">
+            <h2 className="identity-title">TECHNICAL_EXPERIENCE</h2>
+            <div className="id-serial">LOG_ENTRIES: {experiences.length}</div>
+          </div>
+          <div className="header-decorator"></div>
+        </div>
+
         <div className="experience-list">
           {experiences.map((exp, index) => (
             <div key={index} className="exp-item">

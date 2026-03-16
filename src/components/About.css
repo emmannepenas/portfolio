@@ -1,142 +1,92 @@
-/* --- Global Theme Variables (Reference) --- */
-:root {
-  --primary-cyan: #00f2ff;
-  --dark-teal: #003a40;
-  --bg-black: #020b0d;
-  --text-dim: #00828a;
-  --glow-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
-}
-
+/* --- Reusing your Cyber Theme --- */
 .about-container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
-  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 20px;
 }
 
-.section-title {
-  font-size: 1.4rem;
-  color: #fff;
-  background: var(--dark-teal); /* Dark Teal Background */
-  display: inline-block;
-  padding: 5px 15px;
-  margin-bottom: 1.5rem;
-  letter-spacing: 3px;
-  border-right: 3px solid var(--primary-cyan); /* Cyan accent */
-  box-shadow: 4px 4px 0px rgba(0, 242, 255, 0.2);
-  text-transform: uppercase;
-}
-
-.bio-box {
+.intro-section, .experience-section {
+  margin-bottom: 40px;
+  background: rgba(2, 11, 13, 0.6);
   border: 1px solid var(--dark-teal);
-  padding: 25px;
-  background: rgba(0, 58, 64, 0.1); /* Subtle teal tint */
-  margin-bottom: 3rem;
-  line-height: 1.8;
-  position: relative;
-  overflow: hidden;
+  border-radius: 4px;
+  padding: 20px;
 }
 
-/* Added a subtle "Corner Notch" effect for a tech look */
-.bio-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-style: solid;
-  border-width: 0 15px 15px 0;
-  border-color: transparent var(--primary-cyan) transparent transparent;
+/* SMALL HEADER LOGIC (Consistent with Profile/Skills/Contact) */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(0, 242, 255, 0.05);
+  border-bottom: 1px solid var(--dark-teal);
+  margin: -20px -20px 20px -20px; /* Flush with edges */
 }
 
+.identity-title {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+  color: var(--primary-cyan);
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--primary-cyan); /* Glow effect */
+}
+
+.id-serial {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  font-family: monospace;
+}
+
+.header-decorator {
+  width: 3px;
+  height: 12px;
+  background: var(--primary-cyan);
+  box-shadow: 0 0 10px var(--primary-cyan);
+}
+
+/* Bio Styling */
 .bio-box p {
-  margin-bottom: 1rem;
+  color: #fff;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
 }
 
 .highlight {
-  color: #fff;
+  color: var(--primary-cyan);
   font-weight: bold;
-  text-shadow: 0 0 8px var(--primary-cyan);
+  text-decoration: underline;
+  text-decoration-color: var(--dark-teal);
 }
 
-/* --- Technical Experience Styling --- */
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
+/* Experience Items */
 .exp-item {
-  border-bottom: 1px solid rgba(0, 242, 255, 0.1);
-  padding-bottom: 15px;
-  opacity: 0; /* Start hidden for animation */
-  animation: slideInRight 0.5s ease-out forwards;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border-left: 1px solid var(--dark-teal);
 }
-
-/* Staggered animation for list items */
-.exp-item:nth-child(1) { animation-delay: 0.2s; }
-.exp-item:nth-child(2) { animation-delay: 0.4s; }
-.exp-item:nth-child(3) { animation-delay: 0.6s; }
 
 .exp-title {
+  font-size: 1rem;
   color: var(--primary-cyan);
-  font-size: 1.1rem;
   margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.3s ease;
-}
-
-.exp-item:hover .exp-title {
-  transform: translateX(10px);
-  text-shadow: 0 0 12px var(--primary-cyan);
+  text-transform: uppercase;
 }
 
 .cursor {
-  display: inline-block;
-  width: 8px;
-  height: 1.2rem;
-  background: var(--primary-cyan);
-  animation: blink 1s step-end infinite;
-  vertical-align: middle;
+  color: var(--primary-cyan);
+  animation: blink 1s infinite;
 }
 
 .exp-desc {
-  color: var(--text-dim);
-  font-size: 0.95rem;
-  padding-left: 25px;
-  border-left: 1px solid var(--dark-teal);
-  margin-left: 5px;
-}
-
-/* --- New Animations --- */
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
   50% { opacity: 0; }
-}
-
-/* --- Mobile Adjustments --- */
-@media (max-width: 768px) {
-  .bio-box {
-    padding: 15px;
-    font-size: 0.95rem;
-  }
-  
-  .section-title {
-    font-size: 1.1rem;
-  }
-
-  .exp-item:hover .exp-title {
-    transform: none; /* Disable hover slide on mobile */
-  }
 }

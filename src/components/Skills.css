@@ -1,153 +1,49 @@
-/* --- Base Container Logic --- */
-.skills-container {
-  width: 100%;
-  min-height: 100vh;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  overflow-x: hidden; /* Prevents side-scrolling on mobile */
-}
-
-.content-scaler {
-  width: 100%;
-  max-width: 900px;
-  /* Extra bottom padding so the last tool isn't hidden by mobile nav-bars */
-  padding-bottom: 120px; 
-}
-
-/* --- Section Headers --- */
-.skills-header {
-  font-size: 1.4rem;
-  color: #fff;
-  border-left: 4px solid var(--primary-cyan);
-  padding-left: 15px;
-  margin: 40px 0 25px 0;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* --- Progress Bars (Core Levels) --- */
-.skill-bar-wrapper {
-  margin-bottom: 30px;
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.skill-info {
+/* --- Reusing the standard small header style --- */
+.card-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(0, 242, 255, 0.05);
+  border-bottom: 1px solid var(--dark-teal);
+  margin-bottom: 25px; /* Spacing between header and the skill bars */
 }
 
-.skill-name {
-  color: #fff;
-  font-weight: 600;
-}
-
-.skill-percent {
-  color: var(--primary-cyan);
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.bar-bg {
-  width: 100%;
-  height: 10px;
-  background: var(--dark-teal);
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--dark-teal), var(--primary-cyan));
-  box-shadow: 0 0 12px var(--primary-cyan);
-  transition: width 1.8s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-/* --- Integrative Tools Section (Mobile Fitted) --- */
-.tools-grid {
-  display: grid;
-  /* Desktop: 2 columns | Tablet/Small Desktop: Auto-fit */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-  width: 100%;
-}
-
-.tool-tag {
-  background: rgba(0, 58, 64, 0.15);
-  border: 1px solid var(--dark-teal);
-  padding: 24px;
-  position: relative;
-  transition: all 0.3s ease;
-  border-radius: 4px;
+.header-content {
   display: flex;
   flex-direction: column;
+  gap: 1px;
 }
 
-/* Visual glitch line for the cyberpunk feel */
-.tool-glitch-line {
-  position: absolute;
-  left: 0;
-  top: 20%;
-  height: 60%;
-  width: 2px;
-  background: var(--primary-cyan);
-  opacity: 0.5;
+.identity-title {
+  font-size: 0.65rem; /* Smaller font as requested */
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+  color: var(--primary-cyan);
+  text-transform: uppercase;
+  text-shadow: 0 0 5px var(--primary-cyan);
 }
 
-.tool-tag:hover {
-  border-color: var(--primary-cyan);
-  background: rgba(0, 242, 255, 0.08);
-  transform: translateX(8px);
-}
-
-.tool-name {
-  color: #fff;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-}
-
-.tool-usage {
-  font-size: 0.85rem;
+.id-serial {
+  font-size: 0.55rem;
   color: var(--text-dim);
-  line-height: 1.6;
+  font-family: monospace;
 }
 
-/* --- Mobile Specific Optimization (max-width: 768px) --- */
-@media (max-width: 768px) {
-  .skills-container {
-    padding: 10px; /* Tighter padding for small screens */
-  }
-
-  .skills-header {
-    font-size: 1.1rem;
-    text-align: center;
-    border-left: none;
-    border-bottom: 2px solid var(--primary-cyan);
-    padding-left: 0;
-    padding-bottom: 10px;
-  }
-
-  .tools-grid {
-    /* Critical Fix: Forces a clean single column that respects the 60px side-nav */
-    grid-template-columns: 1fr; 
-    gap: 12px;
-  }
-
-  .tool-tag {
-    margin: 0 5px;
-    padding: 18px; /* Slightly smaller padding for better text fit */
-  }
-
-  .tool-tag:hover {
-    transform: none; /* Disable horizontal shift on mobile to prevent overflow */
-    border-color: var(--primary-cyan);
-  }
+.header-decorator {
+  width: 3px;
+  height: 12px;
+  background: var(--primary-cyan);
+  box-shadow: 0 0 8px var(--primary-cyan);
 }
 
-/* Entrance Animation */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Section Spacing */
+.proficiency-section, 
+.frameworks-section {
+  margin-bottom: 40px;
+  background: rgba(2, 11, 13, 0.4); /* Slight background for sectioning */
+  padding: 15px;
+  border: 1px solid rgba(0, 58, 64, 0.3);
+  border-radius: 4px;
 }

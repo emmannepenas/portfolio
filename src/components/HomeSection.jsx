@@ -1,7 +1,6 @@
 import React from 'react';
 import './HomeSection.css';
 
-// Added { profileImg } to catch the prop from App.jsx
 const HomeSection = ({ profileImg }) => {
   const services = [
     {
@@ -23,7 +22,6 @@ const HomeSection = ({ profileImg }) => {
 
   return (
     <section className="hero-container">
-      {/* Wrapper ensures content doesn't hide behind the vertical rail */}
       <div className="content-scaler"> 
         
         {/* Hero Header Section */}
@@ -33,32 +31,38 @@ const HomeSection = ({ profileImg }) => {
               <img 
                 src={profileImg} 
                 className="profile-image"
-                alt="Emmanne Angelo Peñas - System Operator" /* Added Alt for ESLint */
+                alt="Emmanne Angelo Peñas"
                 onError={(e) => { e.target.src = "https://via.placeholder.com/150/00f2ff/020b0d?text=User"; }}
               />
             </div>
-            <div className="status-badge">ONLINE</div>
+            <div className="status-badge">SYSTEM_ONLINE</div>
           </div>
 
           <div className="hero-content">
             <h1 className="hero-name">Emmanne Angelo Peñas</h1>
             <div className="terminal-divider"></div>
             <p className="hero-tagline">
-              "Architecting the digital mainframe through full-stack precision and UI innovation."
+              "Architecting the digital mainframe through <span className="highlight">full-stack precision</span> and <span className="highlight">UI innovation</span>."
             </p>
           </div>
         </div>
 
-        {/* Services Section */}
+        {/* Services Section with Small Header */}
         <div className="services-section">
-          <h2 className="services-title">CORE_SERVICES</h2>
+          <div className="card-header">
+            <div className="header-content">
+              <h2 className="identity-title">CORE_SERVICES</h2>
+              <div className="id-serial">MODULE_EXECUTION: ACTIVE</div>
+            </div>
+            <div className="header-decorator"></div>
+          </div>
+
           <div className="services-grid">
             {services.map((service, index) => (
               <div key={index} className="service-card">
                 <div className="service-icon">{service.icon}</div>
                 <h3 className="service-role">{service.title}</h3>
                 <p className="service-desc">{service.desc}</p>
-                {/* Visual tech-line for mobile flair */}
                 <div className="card-scanline"></div>
               </div>
             ))}

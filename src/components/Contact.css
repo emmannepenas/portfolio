@@ -152,3 +152,74 @@
     background: transparent;
   }
 }
+
+/* Container adjustments to match the Profile look */
+.form-wrapper {
+  background: rgba(2, 11, 13, 0.95);
+  border: 1px solid var(--dark-teal);
+  border-radius: 8px;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* SMALL HEADER LOGIC */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(0, 242, 255, 0.05);
+  border-bottom: 1px solid var(--dark-teal);
+  /* Pull header to the edges of the form-wrapper */
+  margin: -25px -25px 25px -25px; 
+}
+
+/* Reusing the exact styles from Profile.jsx */
+.identity-title {
+  font-size: 0.65rem; 
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+  color: var(--primary-cyan);
+  text-transform: uppercase;
+  text-shadow: 0 0 5px var(--primary-cyan);
+}
+
+.id-serial {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  font-family: monospace;
+}
+
+.header-decorator {
+  width: 3px;
+  height: 12px;
+  background: var(--primary-cyan);
+  box-shadow: 0 0 8px var(--primary-cyan);
+}
+
+/* Ensure form spacing doesn't feel cramped with the new header */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Styling for the footer status inside the container */
+.terminal-footer {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 242, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-text {
+  font-size: 0.6rem;
+  font-family: monospace;
+  color: var(--text-dim);
+}

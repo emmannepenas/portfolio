@@ -1,7 +1,6 @@
 import React from 'react';
 import './Profile.css';
 
-// Added { profileImg } prop here to catch the image from App.jsx
 const Profile = ({ profileImg }) => {
   const userDetails = {
     name: "Emmanne Angelo Peñas",
@@ -20,17 +19,21 @@ const Profile = ({ profileImg }) => {
 
   return (
     <div className="profile-container">
-      {/* Wrapped in content-scaler to ensure it stays clear of the vertical rail */}
       <div className="content-scaler">
         <div className="profile-card">
+          
+          {/* REFINED SMALLER HEADER */}
           <div className="card-header">
-            <h2 className="identity-title">USER_IDENTITY_CARD</h2>
-            <div className="id-serial">SN-03162026-PH</div>
+            <div className="header-content">
+              <h2 className="identity-title">USER_IDENTITY_CARD</h2>
+              <div className="id-serial">SN-03162026-PH</div>
+            </div>
+            {/* Small decorative corner or status indicator */}
+            <div className="header-decorator"></div>
           </div>
 
           <div className="card-body">
             <div className="profile-pic-large">
-              {/* Updated to use the profileImg prop variable */}
               <img 
                 src={profileImg} 
                 alt="Profile Identity" 

@@ -294,3 +294,113 @@
     border-left-color: var(--primary-cyan);
   }
 }
+
+/* --- Hero Section Styling --- */
+.hero-name {
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+  text-shadow: 0 0 15px var(--primary-cyan);
+}
+
+.terminal-divider {
+  height: 2px;
+  width: 100px;
+  background: var(--primary-cyan);
+  margin: 15px 0;
+  box-shadow: 0 0 10px var(--primary-cyan);
+}
+
+.hero-tagline {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 1.1rem;
+  max-width: 500px;
+}
+
+.highlight {
+  color: var(--primary-cyan);
+  font-style: normal;
+}
+
+/* --- SMALL HEADER LOGIC (Consistent with other pages) --- */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(0, 242, 255, 0.05);
+  border-bottom: 1px solid var(--dark-teal);
+  margin-bottom: 25px;
+}
+
+.identity-title {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+  color: var(--primary-cyan);
+  text-transform: uppercase;
+  text-shadow: 0 0 5px var(--primary-cyan);
+}
+
+.id-serial {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  font-family: monospace;
+}
+
+.header-decorator {
+  width: 3px;
+  height: 12px;
+  background: var(--primary-cyan);
+  box-shadow: 0 0 8px var(--primary-cyan);
+}
+
+/* --- Service Cards --- */
+.service-card {
+  background: rgba(2, 11, 13, 0.8);
+  border: 1px solid var(--dark-teal);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--primary-cyan);
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.service-role {
+  color: var(--primary-cyan);
+  font-size: 1rem;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.service-desc {
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Status Badge Animation */
+.status-badge {
+  font-size: 0.6rem;
+  color: var(--primary-cyan);
+  border: 1px solid var(--primary-cyan);
+  padding: 2px 8px;
+  margin-top: 10px;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
